@@ -5,9 +5,7 @@
 
 To install [trzsz](https://github.com/trzsz/trzsz) using Homebrew:
 ```sh
-brew tap trzsz/trzsz
 brew install trzsz
-test -f /usr/local/bin/trzsz-iterm2 || sudo ln -s $(which trzsz-iterm2) /usr/local/bin/trzsz-iterm2
 ```
 
 You can confirm that the install worked using:
