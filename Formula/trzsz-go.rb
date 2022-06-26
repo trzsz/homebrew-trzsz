@@ -6,15 +6,19 @@ class TrzszGo < Formula
   license "MIT"
 
   depends_on "go" => :build
-  depends_on "make" => :build
 
   def install
-    system "make"
-    bin.install Dir["bin/*"]
+    system "go", "build", "-o", bin/"trz", "./cmd/trz"
+    system "go", "build", "-o", bin/"tsz", "./cmd/tsz"
+    system "go", "build", "-o", bin/"trzsz", "./cmd/trzsz"
   end
 
   test do
-    assert_match `uname`.strip, shell_output("#{bin}/trzsz uname")
+    assert_match "trzsz go #{version}", shell_output("#{bin}/trzsz --version")
+    assert_match "trz (trzsz) go #{version}", shell_output("#{bin}/trz --version")
+    assert_match "tsz (trzsz) go #{version}", shell_output("#{bin}/tsz --version")
+
+    assert_match "executable file not found", shell_output("#{bin}/trzsz cmd_not_exists 2>&1", 255)
     touch "tmpfile"
     assert_match "Not a directory", shell_output("#{bin}/trz tmpfile 2>&1", 254)
     rm "tmpfile"
