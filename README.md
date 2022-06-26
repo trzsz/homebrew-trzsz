@@ -12,7 +12,7 @@ brew install trzsz
 You can confirm that the install worked using:
 ```sh
 $ trzsz-iterm2 -v
-trzsz-iterm2 (trzsz) py 1.0.0
+trzsz-iterm2 (trzsz) py 1.1.0
 ```
 
 ### To install [trzsz-go](https://github.com/trzsz/trzsz-go) using Homebrew:
@@ -24,5 +24,5 @@ brew install trzsz-go
 You can confirm that the install worked using:
 ```sh
 $ trzsz -v
-trzsz go 0.1.7
+trzsz go 0.1.8
 ```
