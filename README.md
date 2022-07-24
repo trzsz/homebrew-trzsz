@@ -24,5 +24,5 @@ brew install trzsz-go
 You can confirm that the install worked using:
 ```sh
 $ trzsz -v
-trzsz go 0.1.8
+trzsz go 0.1.9
 ```
